@@ -1,15 +1,25 @@
 <?php
 
-namespace App\Models;
+namespace Src\Models;
+
+use Src\Models\ValueObject\TodoStatusInterface;
+use Src\Models\ValueObject\TodoDoing;
+use Src\Models\ValueObject\TodoFailed;
+use Src\Models\ValueObject\TodoComplete;
 
 class TodoStatus {
+    /** @var TodoStatusInterface */
     private $status;
 
-    public function __construct(string $status)
+    public function __construct(TodoStatusInterface $status)
     {
-        if (status === 0 || status === 1) {
-            throw new Exception('不正なステータスです。');
-        }
         $this->status = $status;
     }
+
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
 }
+

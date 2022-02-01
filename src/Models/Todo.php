@@ -1,14 +1,16 @@
 <?php
 
-namespace App\Models;
+namespace Src\Models;
 
 use Exception;
 
 class Todo {
+    /** @var TodoTitle */
     private $title;
+    /** @var TodoStatus */
     private $status;
+    private $dueDate;
 
-    const MIN_LENGTH = 3;
 
     public function __construct(TodoTitle $title, TodoStatus $status)
     {

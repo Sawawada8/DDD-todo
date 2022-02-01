@@ -1,5 +1,6 @@
 <?php
 
+namespace Src\Models;
 
 class TodoTitle {
     public $title;
@@ -9,8 +10,13 @@ class TodoTitle {
     public function __construct(string $title)
     {
         if (strlen(title) < MIN_LENGTH) {
-            throw new Exception('文字数が３文字以下です。');
+            throw new Exception(' TODOタイトルは３文字以上である必要があります。');
         }
         $this->title = $title;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
     }
 }
